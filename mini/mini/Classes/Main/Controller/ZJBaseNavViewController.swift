@@ -23,11 +23,29 @@ class ZJBaseNavViewController: UINavigationController {
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if viewControllers.count>0 {
-              viewController.hidesBottomBarWhenPushed = true
+            
+            viewController.hidesBottomBarWhenPushed = true
+            
+            addBackButton()
         }
         pushViewController(viewController, animated: animated)
     }
 
+    func addBackButton() {
+        
+        let btn:ZJNavButton = ZJNavButton(frame: CGRect(x: 0, y: 0, width: 199, height: 19))
+        
+        btn.setImage(#imageLiteral(resourceName: "back"), for: .normal)
+        
+        btn.addTarget(self, action: #selector(back), for: .touchUpInside)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
+        
+    }
+    
+    @objc func back()  {
+        navigationController?.popViewController(animated: true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

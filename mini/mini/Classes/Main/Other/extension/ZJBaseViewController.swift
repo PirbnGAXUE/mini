@@ -12,13 +12,72 @@ import SnapKit
 
 extension UIViewController {
     
-    func addBackButton() {
+    private func showNoDataView(_ belowView: UIView?)  {
         
-        let btn:ZJNavButton = ZJNavButton(frame: CGRect(x: 0, y: 0, width: 199, height: 19))
+        let tempView = UIView()
+        tempView.isHidden = false
+        tempView.tag = 300
+        self.view.addSubview(tempView)
         
-        btn.setImage(<#T##image: UIImage?##UIImage?#>, for: <#T##UIControlState#>)
+        let label = UILabel()
+        label.text = "暂无数据"
+        tempView.addSubview(label)
+        
+        label.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+        }
+        
+        let img = UIImageView(image: UIImage(named: "YCNoDataImage"))
+        
+        tempView.addSubview(img)
+        
+        img.snp.makeConstraints { (make) in
+            
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(label.snp.top).offset(-20)
+            make.size.equalTo(CGSize(width: 90, height: 130))
+        }
+        
+        if let temp = belowView  {
+            
+            self.view.insertSubview(tempView, belowSubview: temp)
+            
+        } else {
+            
+            self.view.addSubview(tempView)
+        }
+        
+        
+        tempView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+
+}
+    //MARK: 隐藏暂无数据页
+    func hideTempView()  {
+        
+        let  findTempView = self.view.viewWithTag(300)
+        
+        findTempView?.isHidden = true
         
     }
+    
+    //MARK: 当self.view有需要悬浮于暂无数据视图使用
+    func showNoDataViewAbove(_ belowView: UIView)  {
+        
+        showNoDataView(belowView)
+    }
+    
+    //MARK: 直接显示暂无数据页
+    func showNoDataView() {
+        
+        showNoDataView(nil)
+        
+    }
+    
+    
+    
     
     
     

@@ -17,6 +17,13 @@
 		846B412C1ECD76A500973505 /* ZJBaseNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B412B1ECD76A500973505 /* ZJBaseNavViewController.swift */; };
 		846B41311ECD786500973505 /* ZJBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B41301ECD786500973505 /* ZJBaseViewController.swift */; };
 		846B41331ECD790300973505 /* ZJNavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B41321ECD790300973505 /* ZJNavButton.swift */; };
+		846B41351ECD813800973505 /* XXColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B41341ECD813800973505 /* XXColor.swift */; };
+		846B41371ECD81DA00973505 /* ZJTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B41361ECD81DA00973505 /* ZJTabBarViewController.swift */; };
+		846B41391ECD83F900973505 /* ZJHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B41381ECD83F900973505 /* ZJHomeViewController.swift */; };
+		846B413B1ECD855900973505 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B413A1ECD855900973505 /* UILabel+Extension.swift */; };
+		846B413D1ECD858400973505 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B413C1ECD858400973505 /* UIButton+Extension.swift */; };
+		846B413F1ECD917900973505 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B413E1ECD917900973505 /* UIImageView+Extension.swift */; };
+		846B41411ECD92A300973505 /* ZJHomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B41401ECD92A300973505 /* ZJHomeButton.swift */; };
 		84CEA394D707F23D24BAF017 /* Pods_mini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E28302B97EF726B1B73369 /* Pods_mini.framework */; };
 		88F444DCA224C9CD0D6B4589 /* Pods_miniTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68029B2F7E54937D4934B73B /* Pods_miniTests.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +66,13 @@
 		846B412B1ECD76A500973505 /* ZJBaseNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJBaseNavViewController.swift; sourceTree = "<group>"; };
 		846B41301ECD786500973505 /* ZJBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJBaseViewController.swift; sourceTree = "<group>"; };
 		846B41321ECD790300973505 /* ZJNavButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJNavButton.swift; sourceTree = "<group>"; };
+		846B41341ECD813800973505 /* XXColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XXColor.swift; sourceTree = "<group>"; };
+		846B41361ECD81DA00973505 /* ZJTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJTabBarViewController.swift; sourceTree = "<group>"; };
+		846B41381ECD83F900973505 /* ZJHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJHomeViewController.swift; sourceTree = "<group>"; };
+		846B413A1ECD855900973505 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		846B413C1ECD858400973505 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		846B413E1ECD917900973505 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		846B41401ECD92A300973505 /* ZJHomeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJHomeButton.swift; sourceTree = "<group>"; };
 		AEFB188B1A340335B0AA2CA8 /* Pods_miniUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_miniUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9B3CE254DE8BA97648623E /* Pods-mini.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mini.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mini/Pods-mini.debug.xcconfig"; sourceTree = "<group>"; };
 		DE05AC73A768ACFC26097BD4 /* Pods-miniTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miniTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-miniTests/Pods-miniTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -245,6 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				846B412B1ECD76A500973505 /* ZJBaseNavViewController.swift */,
+				846B41361ECD81DA00973505 /* ZJTabBarViewController.swift */,
+				846B41381ECD83F900973505 /* ZJHomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -269,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				846B41321ECD790300973505 /* ZJNavButton.swift */,
+				846B41401ECD92A300973505 /* ZJHomeButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -356,6 +373,10 @@
 		846B412F1ECD785400973505 /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				846B413A1ECD855900973505 /* UILabel+Extension.swift */,
+				846B413C1ECD858400973505 /* UIButton+Extension.swift */,
+				846B413E1ECD917900973505 /* UIImageView+Extension.swift */,
+				846B41341ECD813800973505 /* XXColor.swift */,
 				846B41301ECD786500973505 /* ZJBaseViewController.swift */,
 			);
 			path = extension;
@@ -656,10 +677,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				846B412A1ECD724300973505 /* Common.swift in Sources */,
+				846B41391ECD83F900973505 /* ZJHomeViewController.swift in Sources */,
 				846B41331ECD790300973505 /* ZJNavButton.swift in Sources */,
+				846B413D1ECD858400973505 /* UIButton+Extension.swift in Sources */,
 				846B412C1ECD76A500973505 /* ZJBaseNavViewController.swift in Sources */,
+				846B41351ECD813800973505 /* XXColor.swift in Sources */,
+				846B41371ECD81DA00973505 /* ZJTabBarViewController.swift in Sources */,
+				846B413F1ECD917900973505 /* UIImageView+Extension.swift in Sources */,
 				846B41261ECD721700973505 /* AppDelegate.swift in Sources */,
 				846B41311ECD786500973505 /* ZJBaseViewController.swift in Sources */,
+				846B41411ECD92A300973505 /* ZJHomeButton.swift in Sources */,
+				846B413B1ECD855900973505 /* UILabel+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

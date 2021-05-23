@@ -6,4 +6,9 @@
 //  Copyright © 2017年 Mac. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+//  获取屏幕的宽度
+let ScreenWidth = UIScreen.main.bounds.size.width
+//  获取屏幕的高度
+let ScreenHeight = UIScreen.main.bounds.size.height
