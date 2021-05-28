@@ -12,23 +12,20 @@ class ZJBaseNavViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.tintColor = .black
-        navigationBar.isTranslucent = false
-        navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationBar.shadowImage = UIImage()
-        
-
-        // Do any additional setup after loading the view.
+//        navigationBar.isTranslucent = false
+//        navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//        navigationBar.shadowImage = UIImage()
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        if viewControllers.count>0 {
+        
+        if self.viewControllers.count>0 {
             
             viewController.hidesBottomBarWhenPushed = true
             
             addBackButton()
         }
-        pushViewController(viewController, animated: animated)
+        super.pushViewController(viewController, animated: animated)
     }
 
     func addBackButton() {
@@ -39,7 +36,7 @@ class ZJBaseNavViewController: UINavigationController {
         
         btn.addTarget(self, action: #selector(back), for: .touchUpInside)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
+        self.navigationController?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
         
     }
     

@@ -11,6 +11,26 @@ import SnapKit
 
 class ZJHomeViewController: UIViewController {
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    var rotationAnimation:CABasicAnimation = {
+        
+        let rot = CABasicAnimation(keyPath: "transform.rotation.z")
+        rot.toValue = NSNumber(floatLiteral: M_PI * 2.0)
+        rot.duration = 2.5
+        rot.isCumulative = true
+        rot.repeatCount = MAXFLOAT
+        rot.isRemovedOnCompletion = false
+        return rot
+        
+    }()
    
     private lazy var titleLabel:UILabel = {
         
@@ -26,34 +46,103 @@ class ZJHomeViewController: UIViewController {
     }()
     
     private lazy var imageViewS:UIImageView = {
-        
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageViewSClick))
-        let imageV:UIImageView = UIImageView(image: #imageLiteral(resourceName: "腕表"), gestureRecognizer: tap, superView: self.view)
-        imageV.isUserInteractionEnabled = false
+        let imageV:UIImageView = UIImageView(image: #imageLiteral(resourceName: "腕表"), superView: self.view)
+        imageV.addGestureRecognizer(tap)
+        imageV.isUserInteractionEnabled = true
         
+        imageV.contentMode = .center
         return imageV
 
     }()
     
-    private lazy var button1:ZJHomeButton = {
-        
-        return ZJHomeButton(borderWidth: 0, bordeColor: .black, redius: 0, backColor: .white, image: <#T##UIImage#>, backImage: <#T##UIImage#>, font: <#T##CGFloat#>, textAligent: <#T##NSTextAlignment#>, target: <#T##Selector#>, title: <#T##String#>, titleColor: <#T##UIColor#>, superView: <#T##UIView#>)
+    private lazy var imageViewSCircle:UIImageView = {
+    
+        let imageV:UIImageView = UIImageView(image: #imageLiteral(resourceName: "椭圆腕表"), superView: self.view)
+        imageV.isUserInteractionEnabled = false
+        imageV.contentMode = .center
+        imageV.layer.add(self.rotationAnimation, forKey: "rotationAnimation")
+        return imageV
         
     }()
     
-    func imageViewSClick(tap:UIGestureRecognizer) {
+    private lazy var button1:ZJHomeButton = {
         
+        let btn:ZJHomeButton = ZJHomeButton(image: UIImage(named:"叉")!, imageSelected:UIImage(named:"对号")!, font: 14, textAligent: .center, title: "设备未连接", titleSelected: "设备已连接", titleColor: .gray, superView: self.view)
+       
+        return btn
+    }()
+    
+    private lazy var snLabel:UILabel = {
+        
+        let label:UILabel = UILabel(textColor: .black, text: "", fontSize: 14, superView: self.view)
+        label.textAlignment = .center
+        label.isHidden = true
+        return label
+        
+    }()
+    
+    private lazy var imageViewX:UIImageView = {
+        
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageViewXClick))
+        let imageV:UIImageView = UIImageView(image: #imageLiteral(resourceName: "血压计"), gestureRecognizer: tap, superView: self.view)
+        imageV.isUserInteractionEnabled = true
+        imageV.contentMode = .center
+        return imageV
+        
+    }()
+    
+    private lazy var imageViewXCircle:UIImageView = {
+        
+        let imageV:UIImageView = UIImageView(image:#imageLiteral(resourceName: "椭圆血压"), superView: self.view)
+        imageV.isUserInteractionEnabled = false
+        imageV.contentMode = .center
+        imageV.layer.add(self.rotationAnimation, forKey: "rotationAnimation")
+        return imageV
+        
+    }()
+    
+    private lazy var button2:ZJHomeButton = {
+        
+        let btn:ZJHomeButton = ZJHomeButton(image: UIImage(named:"叉")!, imageSelected:UIImage(named:"对号")!, font: 14, textAligent: .center, title: "设备未连接", titleSelected: "设备已连接", titleColor: .gray, superView: self.view)
+        
+        return btn
+    }()
+    
+    private lazy var snLabel2:UILabel = {
+        
+        let label:UILabel = UILabel(textColor: .black, text: "", fontSize: 14, superView: self.view)
+        label.textAlignment = .center
+        label.isHidden = true
+        return label
+        
+    }()
+    
+   @objc func imageViewSClick(tap:UIGestureRecognizer) {
+        
+        let tabbBarVc = ZJTabBarViewController()
+        tabbBarVc.selectedIndex = 0
+        present(tabbBarVc, animated: true, completion: nil)
+    
+    }
+   @objc func imageViewXClick(tap:UIGestureRecognizer) {
+        let tabbBarVc = ZJTabBarViewController()
+        tabbBarVc.selectedIndex = 1
+        present(tabbBarVc, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addChildViewController(ZJTabBarViewController())
         configUI()
+        
+        
         // Do any additional setup after loading the view.
     }
     
     func configUI()  {
         
-      view.backgroundColor = .red
+      view.backgroundColor = .white
         
         
       titleLabel.snp.makeConstraints { (make) in
@@ -63,14 +152,59 @@ class ZJHomeViewController: UIViewController {
       }
       
       blueToothLabel.snp.makeConstraints { (make) in
-        make.top.equalTo(self.view).offset(40)
+        make.top.equalTo(self.titleLabel.snp.bottom).offset(10)
         make.centerX.equalTo(self.view)
         make.height.equalTo(44)
       }
+      imageViewS.snp.makeConstraints { (make) in
         
+        make.top.equalTo(self.blueToothLabel.snp.bottom).offset(10)
+        make.height.equalTo(170)
+        make.width.equalTo(170)
+        make.centerX.equalTo(self.view)
+      }
         
+        imageViewSCircle.snp.makeConstraints { (make) in
+             make.top.left.bottom.right.equalTo(imageViewS)
+        }
+      
+        button1.snp.makeConstraints { (make) in
+            make.top.equalTo(imageViewS.snp.bottom).offset(15);
+            make.height.equalTo(20);
+            make.centerX.equalTo(self.view);
+            make.width.equalTo(120)
+        }
+        snLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(button1.snp.bottom).offset(0);
+            make.height.equalTo(30);
+            make.width.equalTo(250);
+            make.centerX.equalTo(self.view);
+        }
+        imageViewX.snp.makeConstraints { (make) in
+            make.top.equalTo(snLabel.snp.bottom).offset(10);
+            make.height.equalTo(170);
+            make.width.equalTo(170);
+            make.centerX.equalTo(self.view);
+        }
+        imageViewXCircle.snp.makeConstraints { (make) in
+           make.top.left.bottom.right.equalTo(imageViewX);
+        }
+        button2.snp.makeConstraints { (make) in
+            make.top.equalTo(imageViewX.snp.bottom).offset(15);
+            make.height.equalTo(20);
+            make.centerX.equalTo(self.view);
+            make.width.equalTo(120)
+        }
+        snLabel2.snp.makeConstraints { (make) in
+            make.top.equalTo(button2.snp.bottom).offset(0);
+            make.height.equalTo(30);
+            make.width.equalTo(250);
+            make.centerX.equalTo(self.view);
+        }
           
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

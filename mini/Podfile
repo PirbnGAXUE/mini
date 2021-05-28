@@ -11,6 +11,7 @@ pod 'SnapKit', '~> 3.1.2’
 pod 'SwiftyJSON'
 pod 'SVProgressHUD'
 pod 'MJRefresh'
+pod 'FMDB','2.6.2'
 
   target 'miniTests' do
     inherit! :search_paths

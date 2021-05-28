@@ -10,14 +10,41 @@
 import UIKit
 
 
+
 class ZJTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        addChildViewControllers()
+       
     }
 
+    func addChildViewControllers() {
+        
+        addChildViewController(VieWContorller: ZJBloodViewController(), titleName:"血压计", imageName:"b")
+        
+        addChildViewController(VieWContorller: ZJWatchViewController(), titleName:"手环", imageName:"w")
+    
+    }
+    
+    func addChildViewController(VieWContorller:UIViewController, titleName:String,imageName:String) -> Void {
+        
+        VieWContorller.tabBarItem.selectedImage = UIImage(named: imageName)
+    
+        VieWContorller.tabBarItem.image = UIImage(named:imageName+"_ss")
+        
+        VieWContorller.title = titleName
+        
+        let nav = ZJBaseNavViewController()
+        
+        VieWContorller.view.backgroundColor = .white
+        
+        nav.addChildViewController(VieWContorller)
+        
+        addChildViewController(nav)
+        
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

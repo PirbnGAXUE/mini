@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        
+      
         self.window?.rootViewController = ZJHomeViewController()
         
         self.window?.makeKeyAndVisible()
@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     func setTintColor() {
+        
+        UINavigationBar.appearance().tintColor = UIColor.RGBValue(0x15dbcb)
+        UITabBar.appearance().tintColor = UIColor.RGBValue(0x15dbcb)
+        UITabBar.appearance().backgroundColor = .white
         
     }
     func applicationWillResignActive(_ application: UIApplication) {

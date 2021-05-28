@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.4.0)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
   - HandyJSON (1.6.1)
   - MJRefresh (3.1.12)
   - SnapKit (3.1.2)
@@ -8,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4.0)
+  - FMDB (= 2.6.2)
   - HandyJSON (~> 1.6.1)
   - MJRefresh
   - SnapKit (~> 3.1.2)
@@ -16,12 +20,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   HandyJSON: dcc98115467462a4749db81bc8a9052607600bdf
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: a974dff233ebfb11c708e40d0cf183bb160bfd37
+PODFILE CHECKSUM: 550b56602a31885631cf964d7a37a3286092c7d9
 
 COCOAPODS: 1.2.0

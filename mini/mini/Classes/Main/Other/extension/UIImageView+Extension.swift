@@ -16,5 +16,10 @@ extension UIImageView {
         self.addGestureRecognizer(gestureRecognizer)
         superView.addSubview(self)
     }
+    convenience init(image:UIImage,superView:UIView){
+        self.init()
+        self.image = image
+        superView.addSubview(self)
+    }
     
 }

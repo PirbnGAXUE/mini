@@ -18,6 +18,6 @@ class ZJHomeButton: UIButton {
     
     override func titleRect(forContentRect contentRect: CGRect) -> CGRect {
         
-        return CGRect(x: 25, y: 0, width: contentRect.width-25, height: contentRect.height);
+        return CGRect(x: 25, y: 0, width: contentRect.width-20, height: contentRect.height);
     }
 }
