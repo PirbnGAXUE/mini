@@ -9,14 +9,59 @@
 import UIKit
 
 class ZJWatchViewController: UIViewController {
+    
+    var isOpen:Bool = false
+    
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "手环"
+        let blueUnit = BleUtils.getInstance()
         
+        blueUnit?.getPhooneBleUtilsState({ (s) in
+            
+            self.isOpen = s==0 ? false :true
+            
+            if Thread.isMainThread {
+                
+                self.upDateButtonStatus()
+                
+            }else{
+                
+                DispatchQueue.main.async(execute: {
+                   
+                    self.upDateButtonStatus()
+                    
+                })
+            }
+            
+            self.isOpen==true ?  self.startScan(): ()
+                
+            
+            
+            
+        })
         addBackButton()
         // Do any additional setup after loading the view.
     }
+    
+    
+    func upDateButtonStatus() {
+        
+    }
+    
+    
+    func startScan()  {
+        
+        
+    }
+    
+    
+    
     
     func addBackButton() {
         
