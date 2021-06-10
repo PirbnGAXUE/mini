@@ -47,6 +47,10 @@
 		847807881ECECBB300E261C1 /* UIView+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478077B1ECECBB300E261C1 /* UIView+CZAddition.m */; };
 		847807891ECECBB300E261C1 /* UIViewController+CZAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478077D1ECECBB300E261C1 /* UIViewController+CZAddition.m */; };
 		84BB45D51ECECC6E002F7A11 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BB45D41ECECC6E002F7A11 /* UIView+Extension.m */; };
+		84BB45D71ECED5B1002F7A11 /* ZJMiNiUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB45D61ECED5B1002F7A11 /* ZJMiNiUserDefaults.swift */; };
+		84BB45D91ECED645002F7A11 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB45D81ECED645002F7A11 /* UserDefaultsProtocol.swift */; };
+		84BB45DB1ECED790002F7A11 /* ZJDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB45DA1ECED790002F7A11 /* ZJDevice.swift */; };
+		84BB45DD1ECEDF2F002F7A11 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB45DC1ECEDF2F002F7A11 /* UIBarButtonItem+Extension.swift */; };
 		84CEA394D707F23D24BAF017 /* Pods_mini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E28302B97EF726B1B73369 /* Pods_mini.framework */; };
 		88F444DCA224C9CD0D6B4589 /* Pods_miniTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68029B2F7E54937D4934B73B /* Pods_miniTests.framework */; };
 /* End PBXBuildFile section */
@@ -136,6 +140,10 @@
 		8478077D1ECECBB300E261C1 /* UIViewController+CZAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CZAddition.m"; sourceTree = "<group>"; };
 		84BB45D31ECECC6E002F7A11 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		84BB45D41ECECC6E002F7A11 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		84BB45D61ECED5B1002F7A11 /* ZJMiNiUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJMiNiUserDefaults.swift; sourceTree = "<group>"; };
+		84BB45D81ECED645002F7A11 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
+		84BB45DA1ECED790002F7A11 /* ZJDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJDevice.swift; sourceTree = "<group>"; };
+		84BB45DC1ECEDF2F002F7A11 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		AEFB188B1A340335B0AA2CA8 /* Pods_miniUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_miniUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9B3CE254DE8BA97648623E /* Pods-mini.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mini.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mini/Pods-mini.debug.xcconfig"; sourceTree = "<group>"; };
 		DE05AC73A768ACFC26097BD4 /* Pods-miniTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miniTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-miniTests/Pods-miniTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -346,6 +354,9 @@
 			children = (
 				846B412F1ECD785400973505 /* extension */,
 				846B411A1ECD721700973505 /* AppDelegate.swift */,
+				84BB45DA1ECED790002F7A11 /* ZJDevice.swift */,
+				84BB45D61ECED5B1002F7A11 /* ZJMiNiUserDefaults.swift */,
+				84BB45D81ECED645002F7A11 /* UserDefaultsProtocol.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -450,6 +461,7 @@
 			children = (
 				846B413A1ECD855900973505 /* UILabel+Extension.swift */,
 				846B413C1ECD858400973505 /* UIButton+Extension.swift */,
+				84BB45DC1ECEDF2F002F7A11 /* UIBarButtonItem+Extension.swift */,
 				846B413E1ECD917900973505 /* UIImageView+Extension.swift */,
 				846B41341ECD813800973505 /* XXColor.swift */,
 				846B41301ECD786500973505 /* ZJBaseViewController.swift */,
@@ -808,6 +820,7 @@
 			files = (
 				84BB45D51ECECC6E002F7A11 /* UIView+Extension.m in Sources */,
 				847807851ECECBB300E261C1 /* UIColor+CZAddition.m in Sources */,
+				84BB45D71ECED5B1002F7A11 /* ZJMiNiUserDefaults.swift in Sources */,
 				846B412A1ECD724300973505 /* Common.swift in Sources */,
 				846B41391ECD83F900973505 /* ZJHomeViewController.swift in Sources */,
 				847807531ECEA35700E261C1 /* JKDBHelper.m in Sources */,
@@ -821,6 +834,7 @@
 				846B413D1ECD858400973505 /* UIButton+Extension.swift in Sources */,
 				846B412C1ECD76A500973505 /* ZJBaseNavViewController.swift in Sources */,
 				846B41351ECD813800973505 /* XXColor.swift in Sources */,
+				84BB45DD1ECEDF2F002F7A11 /* UIBarButtonItem+Extension.swift in Sources */,
 				846B41371ECD81DA00973505 /* ZJTabBarViewController.swift in Sources */,
 				847807891ECECBB300E261C1 /* UIViewController+CZAddition.m in Sources */,
 				8478077E1ECECBB300E261C1 /* NSArray+Log.m in Sources */,
@@ -835,6 +849,8 @@
 				847807461ECE732400E261C1 /* ZJWatchViewController.swift in Sources */,
 				847807841ECECBB300E261C1 /* UIButton+CZAddition.m in Sources */,
 				846B413B1ECD855900973505 /* UILabel+Extension.swift in Sources */,
+				84BB45DB1ECED790002F7A11 /* ZJDevice.swift in Sources */,
+				84BB45D91ECED645002F7A11 /* UserDefaultsProtocol.swift in Sources */,
 				847807881ECECBB300E261C1 /* UIView+CZAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

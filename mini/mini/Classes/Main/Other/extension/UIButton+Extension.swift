@@ -23,4 +23,14 @@ extension UIButton {
         superView.addSubview(self)
     }
     
+    
+    convenience init(font:CGFloat = 17,textAligent:NSTextAlignment = .center,title:String,titleColor:UIColor = .black){
+        self.init()
+        self.titleLabel?.font = UIFont.systemFont(ofSize: font)
+        self.titleLabel?.textAlignment = textAligent;
+        self.setTitle(title, for: .normal)
+        self.setTitleColor(titleColor, for: .normal)
+        
+    }
+    
 }

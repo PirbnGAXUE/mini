@@ -17,6 +17,14 @@ class ZJProgressView: UIView {
     
     var lineWidth:CGFloat = 0.0
     
+    let btn:UIButton = {
+        
+        let btn:UIButton = UIButton(font: 14, textAligent: .center, title: "", titleColor: UIColor(colorLiteralRed: 0/255.0, green: 151/255.0, blue: 219/255.0 , alpha: 1.0))
+        
+        return btn
+    }()
+    
+    
 
     override init(frame: CGRect) {
         
@@ -31,14 +39,40 @@ class ZJProgressView: UIView {
     
     func setUpUI()  {
         
-        //画圆
-        //圆的直径
-        self.circelRadius = self.frame.size.width - 130.0
+       drawScale()
+       drawScale()
+       setResult()
+        
+        
+    }
+
+    func degreesToRadians(rod:CGFloat) -> CGFloat {
+        
+        return (CGFloat(M_PI)*CGFloat(x))/CGFloat(180.0)
+    }
+    
+    func setResult()  {
+        
+       btn.frame = CGRect(x: (self.width-200)*0.5, y: self.height * 0.5-30, width: 200, height: 30)
+        
+      addSubview(btn)
+      
+        
+        
+        
+    }
+    
+    
+    func drawCircle()  {
+        
+       //画圆
+            //圆的直径
+            self.circelRadius = self.frame.size.width - 130.0
         self.lineWidth = 2.0;
         let Rad:CGFloat = CGFloat((self.circelRadius - self.lineWidth) / 2);
         
         let tickPath:UIBezierPath = UIBezierPath(arcCenter: CGPoint(x: self.width / 2, y:  self.height * 0.5), radius: Rad, startAngle: CGFloat(degreesToRadians(rod: 0)), endAngle: degreesToRadians(rod: 360), clockwise: true)
-      
+        
         
         // 底色
         self.bottomLayer = CAShapeLayer()
@@ -50,12 +84,6 @@ class ZJProgressView: UIView {
         self.bottomLayer?.lineWidth = self.lineWidth
         self.bottomLayer?.path = tickPath.cgPath
         self.layer.addSublayer(self.bottomLayer!)
-        
-    }
-
-    func degreesToRadians(rod:CGFloat) -> CGFloat {
-        
-        return (CGFloat(M_PI)*CGFloat(x))/CGFloat(180.0)
     }
 
     func drawScale() {

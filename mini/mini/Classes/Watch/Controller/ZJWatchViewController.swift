@@ -12,10 +12,9 @@ class ZJWatchViewController: UIViewController {
     
     var isOpen:Bool = false
     
+    var barItem:UIBarButtonItem?
     
-    
-    
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +45,38 @@ class ZJWatchViewController: UIViewController {
             
         })
         addBackButton()
+        
+        
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func setupUI()  {
+        
+
+        if (ZJDevice.instance.bracelet?.isEmpty)! {
+            
+            barItem = UIBarButtonItem(title:"解绑" , style: .plain, target: self, action: #selector(disBindWatchClick))
+            
+        }else{
+            
+             barItem = UIBarButtonItem(title:"绑定" , style: .plain, target: self, action: #selector(selectBlueTooth))
+            
+        }
+        
+        navigationItem.rightBarButtonItems = 
+        
+        
+    }
+    
+    @objc func disBindWatchClick()  {
+        
+        
+    }
+    
+    func selectBlueTooth()  {
+        
+        
     }
     
     
